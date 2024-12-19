@@ -1,1 +1,6 @@
+<div class="nav">
+    <ul>
+        <li *ngFor="let topic of topics" [routerLink]="topic">{{topic}}</li>
+    </ul>
+</div>
 <router-outlet></router-outlet>

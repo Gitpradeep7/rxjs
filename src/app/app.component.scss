@@ -1,0 +1,13 @@
+.nav{
+    ul{
+        background-color: rgb(9, 9, 31);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+        li{
+            list-style-type: none;
+            color: white;
+        }
+    }
+}

@@ -4,11 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ObservableComponent } from './observable/observable.component';
+import { FormEventComponent } from './form-event/form-event.component';
+import { TimerObservableComponent } from './timer-observable/timer-observable.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ObservableComponent
+    ObservableComponent,
+    FormEventComponent,
+    TimerObservableComponent
   ],
   imports: [
     BrowserModule,
