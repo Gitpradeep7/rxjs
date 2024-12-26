@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { fromEvent } from 'rxjs';
+import { fromEvent, interval, take, toArray } from 'rxjs';
 
 @Component({
   selector: 'app-form-event',
@@ -7,6 +7,8 @@ import { fromEvent } from 'rxjs';
   styleUrls: ['./form-event.component.scss']
 })
 export class FormEventComponent {
+  name:string = "pradeep";
+  dataFromChild : string="";
   constructor(){}
   @ViewChild('addBtn')
   addBtn!: ElementRef; 
@@ -23,5 +25,14 @@ addVideo(val:string){
   let el = document.createElement('li');
   el.innerText = val;
   document.getElementById("listContainer")?.appendChild(el)
+}
+toArrayMeth(){
+  let source = interval(1000);
+  let sourceToArray = source.pipe(take(10),toArray()).subscribe((res:any)=>{
+    console.log("res",res);
+  })
+}
+getData(mess:any){
+  this.dataFromChild = mess;
 }
 }

@@ -1,6 +1,15 @@
 <div class="nav">
     <ul>
-        <li *ngFor="let topic of topics" [routerLink]="topic">{{topic}}</li>
+        <li *ngFor="let topic of topics" [routerLink]="topic">
+            <ng-container *ngIf="topic == 'cart'; else normal">
+                {{topic}} {{count$ | async}}
+            </ng-container>
+            <ng-template #normal>
+                {{topic}}
+            </ng-template>
+        </li>
     </ul>
 </div>
 <router-outlet></router-outlet>
+<hr>
+<app-counterpage></app-counterpage>

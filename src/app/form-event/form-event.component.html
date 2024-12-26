@@ -2,3 +2,12 @@
 <div class="container">
     <ul id="listContainer"></ul>
 </div>
+<div class="toArrayCont">
+    <h1>To Array</h1>
+    <button (click)="toArrayMeth()">CLick</button>
+</div>
+<app-child-form-event [ChildName]="name" (dataToParent)="getData($event)"></app-child-form-event>
+<div class="output">
+    <p>data from child</p>
+    <h1>{{dataFromChild}}</h1>
+</div>

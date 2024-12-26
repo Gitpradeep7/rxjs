@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'rxjs';
-  topics = ['observable','formEvent','timer']
+  topics = ['observable','formEvent','timer','cart']
+  count$ : Observable<number> | undefined;
+  constructor(private store : Store<{counter: number}>){
+    this.count$ = this.store.select('counter');
+  }
 }
